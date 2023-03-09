@@ -1,0 +1,219 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Caveat', '微軟正黑體', cursive;
+}
+
+body {
+	background: linear-gradient(90deg, rgb(84, 130, 255), rgb(100, 255, 134));
+}
+i {
+	pointer-events: none;
+}
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+}
+header h1 {
+	font-size: 3rem;
+	color: #fff;
+}
+form {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	max-width: 352px;
+	margin: 0 auto 4rem;
+}
+form input, form button {
+	border: none;
+	padding: 0.25rem 0.5rem;
+	font-size: 1.25rem;
+	margin: 0.1rem;
+	border-radius: 5px;
+}
+form input[type="text"] {
+	flex: 1;
+	padding-left: 12px;
+} 
+form input[type="number"] {
+	width: 48px;
+	text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+form button {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	max-width: 352px;
+	margin: 0;
+	cursor: pointer;
+	background-color: rgb(0, 146, 114);
+	color: #fff;
+	transition: all 0.3s;
+}
+form button:hover {
+	background-color: rgb(26, 112, 94);
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo__box {
+	display: flex;
+	width: 90%;
+	margin: 0.5rem 0;
+	border-radius: 5px;
+	overflow: hidden;
+	animation: scaleUP 0.3s forwards;
+	transition: all 0.3s ease;
+}
+.todo__box p {
+	padding: 0.25rem 0.5rem;
+	background-color: #fff;
+	font-size: 1.25rem;
+}
+.todo__box .todo__text {
+	width: 60%;
+	flex: 1;
+}
+.todo__box .todo__time {
+	flex-grow: 0;
+	width: 22%;
+	text-align: center;
+	letter-spacing: -2px;
+}
+.todo__box button {
+	padding: 0.25rem 0.75rem;
+	font-size: 1.25rem;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+.todo__box button.complete {
+	background-color: #006d92;
+}
+.todo__box button.trash {
+	background-color: #999;
+}
+div.sort {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	      justify-content: center;
+	-webkit-box-align: center;
+	  -ms-flex-align: center;
+	      align-items: center;
+	margin: 6.25rem 0rem 0.8rem;
+}
+
+div.sort button {
+	width: 90%;
+	max-width: 352px;
+	cursor: pointer;
+	background-color: #006d92;
+	color: white;
+	border: none;
+	padding: 0.25rem 0.5rem;
+	font-size: 1.25rem;
+	border-radius: 5px;
+	transition: all 0.3s;
+}
+div.sort button:hover {
+	background-color: #05516a;
+}
+
+.done {
+	opacity: 0.5;
+	text-decoration: line-through;
+	text-decoration-thickness: 0.2rem;
+}
+
+@keyframes scaleUP {
+	from{
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@keyframes scaleDown {
+	to {
+		transform: scale(0);
+	}
+}
+
+@media screen and (min-width: 768px)  {
+	form {
+		max-width: initial;
+	}
+	form input,	form button {
+		font-size: 1.75rem;
+	}
+	form input[type="text"] {
+		flex: initial;
+	}
+	form button {
+		position: relative;
+		width: auto;
+		top: initial;
+		margin-left: 20px;
+	}
+	.todo__box {
+		width: 70vw;
+	}
+
+	.todo__box p {
+		padding: 0.25rem 0.5rem;
+		background-color: #fff;
+		font-size: 1.75rem;
+	}
+
+	.todo__box .todo__text {
+		width: 60%;
+		flex: 1;
+	}
+
+	.todo__box .todo__time {
+		width: 20%;
+		text-align: center;
+		letter-spacing: 0;
+	}
+
+	div.sort {
+		margin: 2rem 0rem;
+	}
+
+	div.sort button {
+		width: auto;
+		font-size: 1.75rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.todo__box {
+		width: 40vw;
+	}
+}
